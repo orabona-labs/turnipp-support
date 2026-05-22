@@ -6,166 +6,38 @@
     <title>TurniPP — Gestione Turni e Spettanze</title>
     <meta name="description" content="TurniPP: gestisci turni, calcola spettanze, straordinari e indennità. App iOS gratuita per lavoratori a turni.">
     <style>
-        :root {
-            --primary: #00A8E8;
-            --accent: #F2A900;
-            --green: #00D95F;
-            --bg: #0D1117;
-            --card: #161B22;
-            --border: rgba(255,255,255,0.08);
-            --text: #F0F6FC;
-            --muted: rgba(240,246,252,0.55);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            padding: 0 16px 64px;
-            max-width: 680px;
-            margin: 0 auto;
-        }
-        header {
-            text-align: center;
-            padding: 56px 0 40px;
-        }
-        .app-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
-            border-radius: 24px;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 52px;
-            box-shadow: 0 8px 32px rgba(0,168,232,0.25);
-            border: 1px solid var(--border);
-        }
-        h1 {
-            font-size: 36px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 8px;
-        }
-        .tagline {
-            color: var(--accent);
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 28px;
-        }
-        .cta-group {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 8px;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 13px 22px;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: opacity .15s;
-        }
-        .btn:hover { opacity: 0.85; }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--green));
-            color: #000;
-        }
-        .btn-secondary {
-            background: var(--card);
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-        .free-badge {
-            display: inline-block;
-            background: rgba(0,217,95,0.12);
-            color: var(--green);
-            border: 1px solid rgba(0,217,95,0.25);
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 4px 12px;
-            letter-spacing: 0.5px;
-            margin-top: 12px;
-        }
-        section { margin: 40px 0; }
-        h2 {
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 16px;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-        @media (max-width: 400px) { .feature-grid { grid-template-columns: 1fr; } }
-        .feature-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 18px 16px;
-        }
-        .feature-icon { font-size: 26px; margin-bottom: 8px; }
-        .feature-card h3 {
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .feature-card p {
-            font-size: 13px;
-            color: var(--muted);
-            line-height: 1.4;
-        }
-        .links-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .link-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 14px 18px;
-            text-decoration: none;
-            color: var(--text);
-            transition: border-color .15s;
-        }
-        .link-row:hover { border-color: var(--primary); }
-        .link-row span { font-size: 14px; font-weight: 600; }
-        .link-row .arrow { color: var(--muted); font-size: 14px; }
-        footer {
-            margin-top: 56px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--muted);
-            font-size: 13px;
-        }
-        footer a { color: var(--primary); text-decoration: none; }
-        .app-icon-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 24px;
-            margin: 0 auto 20px;
-            display: block;
-            box-shadow: 0 8px 32px rgba(0,168,232,0.25);
-        }
+        :root { --primary:#00A8E8; --accent:#F2A900; --green:#00D95F; --bg:#0D1117; --card:#161B22; --border:rgba(255,255,255,0.08); --text:#F0F6FC; --muted:rgba(240,246,252,0.55); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:0 16px 64px; max-width:680px; margin:0 auto; }
+        header { text-align:center; padding:56px 0 40px; }
+        .app-icon-img { width:100px; height:100px; border-radius:24px; margin:0 auto 20px; display:block; box-shadow:0 8px 32px rgba(0,168,232,0.25); }
+        h1 { font-size:36px; font-weight:800; letter-spacing:-0.5px; margin-bottom:8px; }
+        .tagline { color:var(--accent); font-size:15px; font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-bottom:28px; }
+        .cta-group { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:8px; }
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:12px; font-size:15px; font-weight:700; text-decoration:none; transition:opacity .15s; }
+        .btn:hover { opacity:0.85; }
+        .btn-primary { background:linear-gradient(135deg,var(--primary),var(--green)); color:#000; }
+        .btn-secondary { background:var(--card); color:var(--text); border:1px solid var(--border); }
+        .btn-accent { background:linear-gradient(135deg,#F2A900,#ff6b35); color:#000; }
+        .free-badge { display:inline-block; background:rgba(0,217,95,0.12); color:var(--green); border:1px solid rgba(0,217,95,0.25); border-radius:20px; font-size:12px; font-weight:700; padding:4px 12px; letter-spacing:0.5px; margin-top:12px; }
+        section { margin:40px 0; }
+        h2 { font-size:13px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:16px; }
+        .feature-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+        @media (max-width:400px) { .feature-grid { grid-template-columns:1fr; } }
+        .feature-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 16px; }
+        .feature-icon { font-size:26px; margin-bottom:8px; }
+        .feature-card h3 { font-size:14px; font-weight:700; margin-bottom:4px; }
+        .feature-card p { font-size:13px; color:var(--muted); line-height:1.4; }
+        .web-banner { background:linear-gradient(135deg,rgba(242,169,0,0.12),rgba(0,168,232,0.10)); border:1px solid rgba(242,169,0,0.3); border-radius:16px; padding:24px 20px; margin-bottom:16px; }
+        .web-banner h3 { font-size:17px; font-weight:700; margin-bottom:8px; }
+        .web-banner p { font-size:13px; color:var(--muted); margin-bottom:16px; line-height:1.5; }
+        .links-list { display:flex; flex-direction:column; gap:10px; }
+        .link-row { display:flex; justify-content:space-between; align-items:center; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px 18px; text-decoration:none; color:var(--text); transition:border-color .15s; }
+        .link-row:hover { border-color:var(--primary); }
+        .link-row span { font-size:14px; font-weight:600; }
+        .link-row .arrow { color:var(--muted); font-size:14px; }
+        footer { margin-top:56px; padding-top:24px; border-top:1px solid var(--border); text-align:center; color:var(--muted); font-size:13px; }
+        footer a { color:var(--primary); text-decoration:none; }
     </style>
 </head>
 <body>
@@ -174,18 +46,23 @@
         <h1>TurniPP</h1>
         <p class="tagline">Turni e Spettanze · FF.OO. e Comparti Sicurezza</p>
         <div class="cta-group">
-            <a href="https://apps.apple.com/it/app/turnipp/id6738937290" class="btn btn-primary">
-                🍎 Scarica su App Store
-            </a>
-            <a href="support.html" class="btn btn-secondary">
-                💬 Supporto
-            </a>
+            <a href="https://apps.apple.com/it/app/turnipp/id6738937290" class="btn btn-primary">🍎 Scarica su App Store</a>
+            <a href="support.html" class="btn btn-secondary">💬 Supporto</a>
         </div>
         <span class="free-badge">✓ GRATUITA · Nessun abbonamento</span>
     </header>
 
     <section>
-        <h2>Funzionalità</h2>
+        <h2>Programmatore Web</h2>
+        <div class="web-banner">
+            <h3>📅 Compila il programmato dal browser</h3>
+            <p>Sei su Android o PC? Nessun problema. Il coordinatore può compilare il programmato mensile online e inviarlo ai colleghi con TurniPP. Compatibile con qualsiasi dispositivo.</p>
+            <a href="./web-scheduler/" class="btn btn-accent">Apri Programmatore Web →</a>
+        </div>
+    </section>
+
+    <section>
+        <h2>Funzionalità App</h2>
         <div class="feature-grid">
             <div class="feature-card">
                 <div class="feature-icon">📅</div>
@@ -198,9 +75,9 @@
                 <p>Calcolo automatico di CO, FS, RC, RR e buoni pasto</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">📸</div>
-                <h3>Scanner OCR</h3>
-                <p>Importa i turni fotografando il foglio cartaceo</p>
+                <div class="feature-icon">📲</div>
+                <h3>Dispositivi vicini</h3>
+                <p>Condividi il programmato con i colleghi via Wi-Fi o Bluetooth</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">⚡️</div>
@@ -223,29 +100,17 @@
     <section>
         <h2>Informazioni</h2>
         <div class="links-list">
-            <a href="support.html" class="link-row">
-                <span>💬 Supporto e FAQ</span>
-                <span class="arrow">›</span>
-            </a>
-            <a href="privacy.html" class="link-row">
-                <span>🔒 Privacy Policy</span>
-                <span class="arrow">›</span>
-            </a>
-            <a href="terms.html" class="link-row">
-                <span>📋 Termini d'Uso (EULA)</span>
-                <span class="arrow">›</span>
-            </a>
+            <a href="support.html" class="link-row"><span>💬 Supporto e FAQ</span><span class="arrow">›</span></a>
+            <a href="privacy.html" class="link-row"><span>🔒 Privacy Policy</span><span class="arrow">›</span></a>
+            <a href="terms.html" class="link-row"><span>📋 Termini d'Uso (EULA)</span><span class="arrow">›</span></a>
         </div>
     </section>
 
     <footer>
         <p>TurniPP · Strumento personale per la gestione dei turni · Non è un'app ufficiale di alcun corpo o istituzione</p>
-        <p style="margin-top:8px">© 2026 Giuseppe Orabona &nbsp;·&nbsp;
-            <a href="mailto:turniapp.info@gmail.com">turniapp.info@gmail.com</a>
-        </p>
+        <p style="margin-top:8px">© 2026 Giuseppe Orabona &nbsp;·&nbsp; <a href="mailto:turniapp.info@gmail.com">turniapp.info@gmail.com</a></p>
         <p style="margin-top:16px">
-            <a href="https://orabona-labs.github.io/orakit-site/">OraKit</a>
-            &nbsp;·&nbsp;
+            <a href="https://orabona-labs.github.io/orakit-site/">OraKit</a> &nbsp;·&nbsp;
             <a href="https://github.com/orabona-labs">orabona-labs</a>
         </p>
     </footer>
